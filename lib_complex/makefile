@@ -1,14 +1,14 @@
-liba:	complex.h complex.c 
+libs:   
 	gcc -Wall -c complex.c
 	ar -rc libcomplex.a complex.o
 	nm -g libcomplex.a
 
-libso:	complex.h complex.c 	
+libd:  
 	gcc -c -Wall -fPIC -o complex.o complex.c
 	gcc -shared -o libcomplex.so complex.o
 	nm -g libcomplex.so
 
-use:	complex.h complex.c use_complex.c
+use:    
 	gcc -Wall use_complex.c -o use_complex -L. -lcomplex
 
 clean:
