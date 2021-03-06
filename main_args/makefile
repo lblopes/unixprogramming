@@ -1,4 +1,4 @@
-args:	args.c
+args:	
 	gcc -Wall args.c -o args
 
 clean:
