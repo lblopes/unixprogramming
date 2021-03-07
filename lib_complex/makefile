@@ -4,8 +4,8 @@ libs:
 	nm -g libcomplex.a
 
 libd:  
-	gcc -c -Wall -fPIC -o complex.o complex.c
-	gcc -shared -o libcomplex.so complex.o
+	gcc -Wall -fPIC -c complex.c -o complex.o
+	gcc -shared complex.o -o libcomplex.so
 	nm -g libcomplex.so
 
 use:    
