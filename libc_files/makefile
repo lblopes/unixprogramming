@@ -1,22 +1,24 @@
+DATA=../data_files/lusiadas.txt
+
 all: fchar fblock getline
 	@echo "done............................................."
 
 fchar:
-	@echo "example: fopen, fgetc, fclosepy.................."
+	@echo "example: fopen, fgetc, fclose...................."
 	gcc -Wall fchar.c -o fchar
-	./fchar lusiadas.txt
+	./fchar ${DATA}
 	@echo
 
 fblock:
 	@echo "example: fopen, fread, fwrite, fclose............"
 	gcc -Wall fblock.c -o fblock
-	./fblock lusiadas.txt
+	./fblock ${DATA}
 	@echo
 
 getline:
 	@echo "example: fopen, getline, fclose.................." 
 	gcc -Wall getline.c -o getline
-	./getline lusiadas.txt
+	./getline ${DATA}
 	@echo
 
 clean:
