@@ -18,8 +18,9 @@ int main(int argc, char* argv[]) {
     return EXIT_FAILURE;
   }
 
-  /* print file size & block info */
+  /* print file name, owner, size & block info */
   printf("file name              : %s\n", argv[1]);
+  printf("owner uid              : %d\n", (int)info.st_uid);  
   printf("size                   : %d bytes\n", (int)info.st_size);
   printf("disk blocks            : %d blocks\n", (int)info.st_blocks);
 
