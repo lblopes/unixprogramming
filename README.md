@@ -10,5 +10,6 @@ for common use cases of libC and kernel API functions.
 | libc_files     | using libc functions for manipulating files |
 | syscalls_files | using the kernel API for files and dirs |
 | syscalls_proc  | using the kernel API for process management |
+| syscalls_sig   | using the kernel and libc APIs for signals |
 
 (copyleft Luís Lopes)
