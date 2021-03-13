@@ -1,0 +1,28 @@
+$ cat > .config
+param1: 263
+param2: 7912
+param3: -2.651178
+param4: 5.222693
+^D
+$
+$ gcc -Wall sighup.c -o sighup
+$ ./sighup &
+my PID is 36595
+working...
+$
+$ kill -HUP 36595
+read parameters, values are:
+param1: 263
+param2: 7912
+param3: -2.651178
+param4: 5.222693
+$
+$ emacs .config (change some values and save)
+$
+$ kill -HUP 36595
+read parameters, values are:
+param1: 263
+param2: 321
+param3: -2.651178
+param4: 3.333895
+$

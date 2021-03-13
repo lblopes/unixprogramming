@@ -1,0 +1,17 @@
+$ gcc -Wall signals.c -o signals
+$ ./signals &            # & detaches ./signals from the Terminal
+My PID is 22402          # your PID will be different!
+$ kill -SIGUSR1 22402
+received SIGUSR1
+$ kill -SIGUSR2 22402
+received SIGUSR2
+$ kill -SIGHUP 22402
+received SIGHUP
+$ kill -SIGINT 22402
+received SIGINT
+$ fg                     # ./signals is connected to the Terminal again
+^Creceived SIGINT
+^Creceived SIGINT
+^Creceived SIGINT        # process is catching ^C = SIGINT
+^Z
+$ kill -SIGKILL 22402    # SIGKILL cannot be caught, always kills process
