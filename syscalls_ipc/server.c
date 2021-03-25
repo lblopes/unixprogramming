@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
   /* create socket from which to read */
   if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
     perror("opening datagram socket");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   /* create name with wildcards - port will be given by OS */
@@ -28,14 +28,14 @@ int main(int argc, char* argv[]) {
   name.sin_port = 0;
   if (bind(sock, (struct sockaddr *)&name, sizeof(name))) {
     perror("binding datagram socket");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   /* find assigned port value and print it out */
   length = (socklen_t)sizeof(name);
   if (getsockname(sock, (struct sockaddr *)&name, &length)) {
     perror("getting socket name");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
   printf("server listening at port %d\n", ntohs(name.sin_port));
   printf("..............................\n");
@@ -52,6 +52,6 @@ int main(int argc, char* argv[]) {
   /* close socket - never gets here */ 
   close(sock);
 
-  /* return cleanly - never gets here */ 
-  return EXIT_SUCCESS;
+  /* return gracefully - never gets here */ 
+  exit(EXIT_SUCCESS);
 }

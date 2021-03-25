@@ -10,5 +10,5 @@ int main(int argc, char* argv[]) {
     if((pid = fork()) > 0)
       printf("parent: %d new child: %d\n", getpid(), pid);
  
-  return EXIT_SUCCESS;
+  exit(EXIT_SUCCESS);
 }

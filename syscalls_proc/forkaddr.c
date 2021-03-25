@@ -1,4 +1,5 @@
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -10,20 +11,20 @@ int main(int argc, char* argv[]) {
 
   if ((pid = fork()) < 0 ) {
     printf("%s: cannot fork()\n", argv[0]);
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   } 
   else if (pid == 0) { 
     /* child process */ 
     value = 1;
     printf("value@child  = %d, value address = %p\n",value,&value); 
-    return EXIT_SUCCESS;
+    exit(EXIT_SUCCESS);
   } else { 
     /* parent process */
     if (waitpid(pid, NULL, 0) < 0) {
       printf("%s: cannot wait for child\n", argv[0]);
-      return EXIT_FAILURE;
+      exit(EXIT_FAILURE);
     }
     printf("value@parent = %d, value address = %p\n",value,&value);
-    return EXIT_SUCCESS;
+    exit(EXIT_SUCCESS);
   }
 }

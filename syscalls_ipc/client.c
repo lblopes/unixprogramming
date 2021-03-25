@@ -22,20 +22,20 @@ int main(int argc, char *argv[]) {
   /* check for at least one argument */
   if (argc < 4) {
     printf("usage: %s hostname port file\n", argv[0]);
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
   
   /* create socket on which to send */
   if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
     perror("opening datagram socket");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   /* destination is constructed from hostname 
      and port both given in the command line */
   if ((hp = gethostbyname(argv[1])) == 0) {
     fprintf(stderr, "%s: unknown host\n", argv[1]);
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
   memcpy(&name.sin_addr, hp->h_addr, hp->h_length);
   name.sin_family = AF_INET;
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
   /* connect to given port */
   if(connect(sock, (struct sockaddr *)&name, sizeof(name)) < 0) {
     perror("connecting to server socket");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
 
   int fd = open(argv[3],O_RDONLY);
@@ -55,13 +55,13 @@ int main(int argc, char *argv[]) {
   while((nbytes = read(fd,buf,BUF_SIZE)) > 0) {
     if (write(sock, buf, nbytes) < 0) {
       perror("sending datagram message");
-      return EXIT_FAILURE;	
+      exit(EXIT_FAILURE);	
     }
   }
 
   /* close socket */
   close(sock);
 
-  /* return cleanly */  
-  return EXIT_SUCCESS;
+  /* return gracefully */  
+  exit(EXIT_SUCCESS);
 }

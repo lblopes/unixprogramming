@@ -1,3 +1,5 @@
+.PHONY: args clean
+
 args:	
 	gcc -Wall args.c -o args
 

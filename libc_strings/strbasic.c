@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-
+#include <string.h>
 
 /*
  * simple string manipulation: strdup, strcmp, strcpy, strcat
@@ -39,5 +38,5 @@ int main(int argc, char* argv[]) {
   free(p2);
   free(p3);
   free(p4);  
-  return 0;
+  exit(EXIT_SUCCESS);
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "complex.h"
 
 int main(int argc, char* argv[]) {
@@ -20,5 +21,5 @@ int main(int argc, char* argv[]) {
    printf("x1 = %f\n", x1);
    printf("x2 = %f\n", x2);
    printf("x3 = %f\n", x3);
-   return 0;
+   exit(EXIT_SUCCESS);
 }

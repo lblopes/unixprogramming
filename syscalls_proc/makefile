@@ -1,5 +1,7 @@
+.PHONY: all clean
+
 all: 
-	@echo "examples: fork, wait, execl, execvp.................."
+	@echo examples: fork, wait, execl, execvp..................
 	gcc -Wall forkseq.c   -o forkseq
 	gcc -Wall forkfor.c   -o forkfor
 	gcc -Wall forkaddr.c  -o forkaddr
@@ -8,12 +10,12 @@ all:
 	gcc -Wall shexecvp.c  -o shexecvp
 	@echo 
 	@echo use the commands as follows:
-	@echo $$ ./forseq
-	@echo $$ ./forfor
+	@echo $$ ./forkseq
+	@echo $$ ./forkfor
 	@echo $$ ./forkaddr
 	@echo $$ ./forkexecl "ls"    
 	@echo $$ ./forkexecl "pwd"
-	@echo $$ ./forkexecl "ls -l"  \#note error 
+	@echo $$ ./forkexecl "ls -l"  \#note "ls -l" will not be executed
 	@echo $$ ./shexecl
 	@echo \> ls      \# your shell now!
 	@echo \> pwd

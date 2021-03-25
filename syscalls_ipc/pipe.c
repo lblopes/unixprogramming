@@ -43,7 +43,7 @@ int main(int argc, char* argv[]) {
       fprintf(stderr, "Unable to catch child exiting: %s\n", strerror(errno));       exit(EXIT_FAILURE);     
     }
 
-    /* return cleanly */
+    /* return gracefully */
     exit(EXIT_SUCCESS);
   } 
   else {
@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
     /* write message from parent */
     write(STDOUT_FILENO, line, nbytes);
 
-    /* return cleanly */
+    /* return gracefully */
     exit(EXIT_SUCCESS);
   }
 }

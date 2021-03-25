@@ -1,22 +1,24 @@
 DATA=../data_files/lusiadas.txt
 
+.PHONY: all fbasic fstat fdir clean
+
 all: fbasic fstat fdir
-	@echo "done............................................."
+	@echo done.............................................
 
 fbasic:
-	@echo "example: open, read, write, close................"
+	@echo example: open, read, write, close................
 	gcc -Wall fbasic.c -o fbasic
 	./fbasic ${DATA}
 	@echo
 
 fstat:
-	@echo "example: stat...................................."
+	@echo example: stat....................................
 	gcc -Wall fstat.c -o fstat
 	./fstat ${DATA}
 	@echo
 
 fdir:
-	@echo "example: opendir, readdir, closedir.............." 
+	@echo example: opendir, readdir, closedir..............
 	gcc -Wall fdir.c -o fdir
 	./fdir .
 	@echo

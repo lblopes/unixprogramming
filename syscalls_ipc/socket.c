@@ -26,17 +26,17 @@ int main(int argc, char* argv[]) {
 
   if (argc < 2) {
     printf("usage: %s file\n", argv[0]);
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
   
   if (socketpair(AF_UNIX, SOCK_STREAM, 0, sockets) < 0) {
     perror("opening stream socket pair");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
   
   if ((pid = fork()) < 0) {
     perror("fork");
-    return EXIT_FAILURE;
+    exit(EXIT_FAILURE);
   }
   else
   if (pid == 0) {
@@ -49,8 +49,8 @@ int main(int argc, char* argv[]) {
       write(sockets[SOCK1],buf,nbytes);
     close(sockets[SOCK1]);
 
-    /* return cleanly */
-    return EXIT_SUCCESS;
+    /* return gracefully */
+    exit(EXIT_SUCCESS);
   }
   else {
     int  nbytes = 0;
@@ -74,10 +74,10 @@ int main(int argc, char* argv[]) {
     /* wait for child and exit */
     if (waitpid(pid, NULL, 0) < 0) {
       perror("did not catch child exiting");
-      return EXIT_FAILURE;
+      exit(EXIT_FAILURE);
     }
 
-    /* return cleanly */
-    return EXIT_SUCCESS;
+    /* return gracefully */
+    exit(EXIT_SUCCESS);
   }
 }

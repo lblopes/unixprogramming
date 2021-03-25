@@ -1,5 +1,7 @@
+.PHONY: all clean
+
 all: 
-	@echo "using signals to interact with processes............"
+	@echo using signals to interact with processes............
 	gcc -Wall signals.c  -o signals
 	gcc -Wall sighup.c   -o sighup
 	gcc -Wall sigtimer.c -o sigtimer

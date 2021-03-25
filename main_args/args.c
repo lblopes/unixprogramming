@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char* argv[]) {
 
@@ -23,8 +24,8 @@ int main(int argc, char* argv[]) {
       break;      
     default:
       printf("invalid arg: %s, usage: ./test [-l|-u] -f file\n", argv[i]);
-      return 1;
+      exit(EXIT_FAILURE);
     }
   }
-  return 0;
+  exit(EXIT_SUCCESS);
 }

@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
   FILE*   file = fopen(argv[1], "r");
   if ( file == NULL ) {
     printf("error: could not open %s\n", argv[1]);
-    exit(1); // ends the program
+    exit(EXIT_FAILURE); // ends the program
   }
 
   /* read file, line by line */
@@ -23,5 +23,7 @@ int main(int argc, char *argv[]) {
 
   /* close file */
   fclose(file);
-  return 0;
+
+  /* return gracefully */
+  exit(EXIT_SUCCESS);
 }

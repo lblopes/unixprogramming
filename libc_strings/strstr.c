@@ -14,9 +14,9 @@ int main(int argc, char *argv[]) {
   while( (ptr = strstr(ptr, needle)) != NULL ) {
     int pos = strlen(haystack) - strlen(ptr);
     printf("[%s @ %d]\n", needle, pos);
-    ptr += strlen(needle);
+    ptr++;
   }
   free(needle);
   free(haystack);  
-  return 0;
+  exit(EXIT_SUCCESS);
 }

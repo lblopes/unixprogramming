@@ -1,5 +1,7 @@
+.PHONY: all clean
+
 all: 
-	@echo "examples: fork, wait, pipe, socket..............."
+	@echo examples: fork, wait, pipe, socket...............
 	gcc -Wall pipe.c   -o pipe
 	gcc -Wall socket.c -o socket
 	gcc -Wall server.c -o server
@@ -9,7 +11,7 @@ all:
 	@echo $$ ./pipe
 	@echo Hello child \(...\)! I\'m your parent pid \(...\).
 	@echo 
-	@echo $$ ./socket quote.txt
+	@echo $$ ./socket ../data_files/quote.txt
 	@echo Such is the nature of evil. 
 	@echo Out there in the vast ignorance of the world it festers and spreads.
 	@echo A shadow that grows in the dark.
@@ -24,7 +26,7 @@ all:
 	@echo $$ ./server 
 	@echo server listening at port 55901  # your port number will be different
 	@echo TAB2:
-	@echo $$ ./client 127.0.0.1 55901 quote.txt
+	@echo $$ ./client 127.0.0.1 55901 ../data_files/quote.txt
 	@echo TAB1: \(output\)
 	@echo Such is the nature of evil. 
 	@echo Out there in the vast ignorance of the world it festers and spreads.
