@@ -12,12 +12,6 @@ libd:
 
 use:    
 	gcc -Wall use_complex.c -o use_complex -L. -lcomplex
-	@echo
-	@echo IMPORTANT NOTE: before running use_complex for the first time
-	@echo run the following shell command:
-	@echo
-	@echo $$ export LD_LIBRARY_PATH=.:\$$LD_LIBRARY_PATH
-	@echo
 
 clean:
 	rm -f *.o *.a *.so *~ use_complex

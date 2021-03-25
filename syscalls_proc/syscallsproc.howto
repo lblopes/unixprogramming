@@ -1,0 +1,51 @@
+***********************************************************
+
+To build all (examples: fork, wait, execl, execvp)
+
+$ make
+
+or
+
+$ make all
+
+To remove temporary files and executable
+
+$ make clean
+
+
+Use the commands as follows:
+
+$ ./forkseq
+
+$ ./forkfor
+
+$ ./forkaddr
+
+$ ./forkexecl "ls"    
+$ ./forkexecl "pwd"
+$ ./forkexecl "ls -l"  # note "ls -l" will not be executed correctly
+
+$ ./shexecl
+> ls      # your shell now!
+...
+> pwd
+...
+> ls -l   # note "ls -l" will not be executed correctly
+...
+> ps -A   # note "ps -A" will not be executed correctly 
+...
+> quit
+
+$ ./shexecvp
+> ls      # your shell now!
+...
+> pwd
+...
+> ls -l   # works correctly now
+...
+> ps -A   # works correctly now
+...
+> quit
+$         # back to terminal shell
+
+***********************************************************

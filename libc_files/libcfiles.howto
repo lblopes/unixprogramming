@@ -1,0 +1,27 @@
+***********************************************************
+
+To build all executables:
+
+$ make
+
+or
+
+$ make all
+
+To build and run fchar:
+
+$ make fchar
+
+To build and run fblock:
+
+$ make fblock
+
+To build and run getline:
+
+$ make getline
+
+To remove temporary files and executable
+
+$ make clean
+
+***********************************************************

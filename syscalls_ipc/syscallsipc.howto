@@ -1,0 +1,53 @@
+***********************************************************
+
+To build all (examples: fork, wait, pipe, socket)
+
+$ make
+
+or
+
+$ make all
+
+To remove temporary files and executable
+
+$ make clean
+
+Use the commands as follows
+
+$ ./pipe
+Hello child \(...\)! I\'m your parent pid \(...\).
+
+$ ./socket ../data_files/quote.txt
+Such is the nature of evil. 
+Out there in the vast ignorance of the world it festers and spreads.
+A shadow that grows in the dark.
+A sleepless malice as black as the oncoming wall of night.
+So it ever was.
+So will it always be.
+In time all foul things come forth.
+-- Thranduil, Elven King
+
+For the final example, create two TABS or open 2 terminals
+
+@TAB1
+
+$ ./server 
+
+@TAB2
+
+$ ./client 127.0.0.1 55901 ../data_files/quote.txt
+
+
+TAB1 output
+
+server listening at port 55901  # your port number will be different
+Such is the nature of evil. 
+Out there in the vast ignorance of the world it festers and spreads.
+A shadow that grows in the dark.
+A sleepless malice as black as the oncoming wall of night.
+So it ever was.
+So will it always be.
+In time all foul things come forth.
+-- Thranduil, Elven King
+
+***********************************************************

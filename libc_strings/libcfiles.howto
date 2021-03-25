@@ -1,0 +1,19 @@
+***********************************************************
+
+To build and run strbasic (example: strdup, strcmp, strcpy)
+
+$ make strbasic
+
+To build and run strstr (example: strdup, strstr)
+
+$ make strstr
+
+To build and run strsep (example: strdup, strsep)
+
+$ make strsep
+
+To remove temporary files and executable
+
+$ make clean
+
+***********************************************************

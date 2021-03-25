@@ -1,0 +1,31 @@
+***********************************************************
+
+To build the static library libcomplex.a:
+
+$ make liba
+
+To build the dynamic library (shared object) libcomplex.so:
+
+$ make libd
+
+To make the case study usage example:
+
+$ make use
+
+To remove temporary files, the libraries and the executable
+
+$ make clean
+
+IMPORTANT NOTE:
+if you are using the dynamic library "libcomplex.so"
+before running "use_complex" for the first time
+you must run the following shell command:                                      
+
+$ export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH                        
+
+LD_LIBRARY_PATH is a shell variable that, similarly to PATH,
+contains a list of ":" separated directories that show the
+operating system where to find the ".so" files at runtime.
+The above command adds the current directory "." to that list.
+
+***********************************************************

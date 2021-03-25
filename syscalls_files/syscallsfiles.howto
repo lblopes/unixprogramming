@@ -1,0 +1,15 @@
+***********************************************************
+
+To make and run fbasic (example: open, read, write, close)
+
+$ make fbasic
+
+To make and run stat (example: stat)
+
+$ make stat
+
+To make and run fdir (example: opendir, readdir, closedir)
+
+$ make fdir
+
+***********************************************************

@@ -1,0 +1,77 @@
+***********************************************************
+
+To build all (examples: sigaction, signal, alarm, kill)
+
+$ make
+
+or
+
+$ make all
+
+To remove temporary files and executable
+
+$ make clean
+
+Use the commands as follows
+
+**signals**
+
+$ ./signals &            # & detaches ./signals from the Terminal
+My PID is 22402          # your PID will be different!
+$ kill -SIGUSR1 22402
+received SIGUSR1
+$ kill -SIGUSR2 22402
+received SIGUSR2
+$ kill -SIGHUP 22402
+received SIGHUP
+$ kill -SIGINT 22402
+received SIGINT
+$ fg                     # ./signals is connected to the Terminal again
+^Creceived SIGINT
+^Creceived SIGINT
+^Creceived SIGINT        # process is catching ^C = SIGINT
+^Z
+$ kill -SIGKILL 22402    # SIGKILL cannot be caught, always kills process
+
+
+**sighup**
+
+$ cat > .config
+param1: 263
+param2: 7912
+param3: -2.651178
+param4: 5.222693
+^D
+$
+$ ./sighup &
+my PID is 36595
+working...
+$
+$ kill -HUP 36595
+read parameters, values are:
+param1: 263
+param2: 7912
+param3: -2.651178
+param4: 5.222693
+$
+$ emacs .config (change some values and save)
+$
+$ kill -HUP 36595
+read parameters, values are:
+param1: 263
+param2: 321
+param3: -2.651178
+param4: 3.333895
+$
+
+
+**sigtimer**
+
+$ ./sigtimer
+calling sensor reading function
+calling sensor reading function
+calling sensor reading function
+calling sensor reading function
+...
+
+***********************************************************
