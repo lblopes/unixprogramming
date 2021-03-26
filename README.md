@@ -4,7 +4,6 @@ for common use cases of libC and kernel API functions.
 | directory      | description |
 | :------------- | :------------------------------------------------------------------------------ | 
 | data_files     | data files for testing |
-| main_args      | using command line arguments |
 | lib_complex    | complex number static and dynamic libraries |
 | libc_strings   | using libc functions for manipulating strings |
 | libc_files     | using libc functions for manipulating files |
