@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char* argv[]) {
 
@@ -9,20 +10,21 @@ int main(int argc, char* argv[]) {
       printf("argv[%d]: %s\n",i,argv[i]);
   
   for( int i = 1 ; i < argc ; /* in body */ ) {
-    switch(argv[i][1]) {
-    case 'l':
-      printf("valid arg: %s\n", argv[i]);
+    if( strcmp(argv[i], "-l") == 0 ) {
+      printf("l-option, valid arg: %s\n", argv[i]);
       i += 1;
-      break;
-    case 'u':
-      printf("valid arg: %s\n", argv[i]);
+    }
+    else
+    if( strcmp(argv[i], "-u") == 0 ) {
+      printf("u-option, valid arg: %s\n", argv[i]);
       i += 1;
-      break;
-    case 'f':
-      printf("valid arg: %s, file is: %s\n", argv[i], argv[i+1]);
+    }
+    else
+    if( strcmp(argv[i], "-f") == 0 ) {      
+      printf("f-option, valid arg: %s, file is: %s\n", argv[i], argv[i+1]);
       i += 2;
-      break;      
-    default:
+    }
+    else {
       printf("invalid arg: %s, usage: ./test [-l|-u] -f file\n", argv[i]);
       exit(EXIT_FAILURE);
     }

@@ -7,7 +7,7 @@ int main(int argc, char* argv[]) {
 
   /* check if argument is given */  
   if (argc != 2) {
-    fprintf(stderr, "usage: %s file\n", getprogname());
+    fprintf(stderr, "usage: %s file\n", argv[0]);
     exit(EXIT_FAILURE);
   }
 

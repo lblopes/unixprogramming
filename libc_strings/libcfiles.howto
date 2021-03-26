@@ -1,5 +1,9 @@
 ***********************************************************
 
+To build and run strargs (example: argv, strcmp)
+
+$ make strargs
+
 To build and run strbasic (example: strdup, strcmp, strcpy)
 
 $ make strbasic

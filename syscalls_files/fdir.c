@@ -13,7 +13,7 @@ int main (int argc, char** argv) {
   /* try to open directory */
   DIR* q = opendir (argv[1]);
   if (q == NULL) {
-    fprintf (stderr, "%s: Cannot open directory '%s'\n", getprogname(), argv[1]);
+    fprintf (stderr, "%s: Cannot open directory '%s'\n", argv[0], argv[1]);
     exit(EXIT_FAILURE);
   }
 
