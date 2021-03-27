@@ -11,7 +11,7 @@ libd:
 	nm -g libcomplex.so
 
 use:    
-	gcc -Wall use_complex.c -o use_complex -lm -L. -lcomplex
+	gcc -Wall use_complex.c -o use_complex -L. -lcomplex -lm
 
 clean:
 	rm -f *.o *.a *.so *~ use_complex
