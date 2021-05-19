@@ -9,7 +9,7 @@ for common use cases of libC and kernel API functions.
 | libc_files     | using libc functions for manipulating files |
 | syscalls_files | using the kernel API for files and dirs |
 | syscalls_proc  | using the kernel API for process management |
-| syscalls_ipc   | using the kernel API for pipes and sockets |
+| syscalls_ipc   | using the kernel API for shared memory, pipes and sockets |
 | syscalls_sig   | using the kernel and libc APIs for signals |
 
 
