@@ -14,9 +14,16 @@ $ make clean
 
 Use the commands as follows
 
+[1] shared memory
+$ ./mmap ../data_files/matrix.txt 2 3
+
+
+[2] pipes
 $ ./pipe
 Hello child \(...\)! I\'m your parent pid \(...\).
 
+
+[3] sockets
 $ ./socket ../data_files/quote.txt
 Such is the nature of evil. 
 Out there in the vast ignorance of the world it festers and spreads.
