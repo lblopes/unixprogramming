@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
     if((pid = fork()) < 0) {
       fprintf(stderr, "%s: can't fork command: %s\n", 
               argv[0], strerror(errno));
-      continue;
+      exit(EXIT_FAILURE);
     } 
     else if(pid == 0) {
       /* break the command into tokens for execvp */
@@ -55,8 +55,9 @@ int main(int argc, char* argv[]) {
     }
 
     /* shell waits for command to finish before giving prompt again */
-    if ((pid = waitpid(pid, NULL, 0)) < 0) 
+    if ((pid = waitpid(pid, NULL, 0)) < 0) {
       fprintf(stderr, "%s: %s\n", argv[0], strerror(errno));
+      exit(EXIT_FAILURE);
   }
   exit(EXIT_SUCCESS);
 }
